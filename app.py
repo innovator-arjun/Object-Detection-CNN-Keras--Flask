@@ -10,11 +10,6 @@ from keras.models import model_from_json
 from flask import Flask, redirect, url_for, request, render_template
 from werkzeug.utils import secure_filename
 from gevent.pywsgi import WSGIServer
-# ResNet50
-# VGG16
-from keras.applications.vgg16 import VGG16
-from keras.applications.vgg16 import preprocess_input as preprocess_input_vgg16, decode_predictions as decode_predictions_vgg16
-# Xception
 
 # Define a flask app
 app = Flask(__name__)
@@ -82,12 +77,8 @@ def predictVGG16():
         preds=int(preds)
         res=target_name[preds]
 
-      #  for i in preds:
-      #      if(i==1):
-       #         res=target_name[i]
-        # decode the results into a list of tuples (class, description, probability)
-        #pred_class = decode_predictions_vgg16(preds, top=1)
-        result = str(res)#str(pred_class[0][0][1])  # Convert to string
+
+        result = str(res) # Convert to string
         return result
     return None
 
