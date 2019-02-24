@@ -32,7 +32,7 @@ $(document).ready(function () {
         $(this).hide();
         $('.loaderVGG16').show();
 
-        // Make prediction by calling api /predictVGG16
+
         $.ajax({
             type: 'POST',
             url: '/predictVGG16',
