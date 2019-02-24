@@ -26,7 +26,7 @@ loaded_model_json=json_file.read()
 json_file.close()
 model=model_from_json(loaded_model_json)
 
-model.load_weights('models/modelfinal.h5')
+model.load_weights('modelfinal.h5')
 
 model.compile(optimizer = 'adam', loss = 'categorical_crossentropy')
 
